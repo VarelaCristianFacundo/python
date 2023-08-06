@@ -18,3 +18,11 @@
 # Adicional
 # Utilizando los conceptos de la clase 8, guarde la información en un archivo de texto dentro de su Drive."
 
+import os
+
+
+# Función para crear un archivo txt donde se almacena la informacion
+def crearArchivo():
+    file = open("data.txt", "w")
+    file.write("[]")
+    file.close()
