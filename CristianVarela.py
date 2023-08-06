@@ -26,3 +26,22 @@ def crearArchivo():
     file = open("data.txt", "w")
     file.write("[]")
     file.close()
+    
+    
+    # Función para Leer un archivo .txt
+def leerArchivo():
+    file = open("data.txt", "r")
+    data = file.read()
+    file.close()
+    #print(data)
+    return data
+  
+  
+  # Función para identificar si existe el .txt
+def existeArchivo():
+    if os.path.isfile("data.txt"):
+        return True
+    else:
+        return False
+
+# Funcion para almacenar la informacion
