@@ -1,0 +1,12 @@
+setup.py
+PrimeraEntrega/CristianVarela.py
+SegundaEntrega/__init__.py
+SegundaEntrega/main.py
+SegundaEntrega/clases/__init__.py
+SegundaEntrega/clases/clases.py
+SegundaEntrega/clases/__init__.py
+SegundaEntrega/clases/clases.py
+segunda_pre_entrega_Cristian_Varela.egg-info/PKG-INFO
+segunda_pre_entrega_Cristian_Varela.egg-info/SOURCES.txt
+segunda_pre_entrega_Cristian_Varela.egg-info/dependency_links.txt
+segunda_pre_entrega_Cristian_Varela.egg-info/top_level.txt
