@@ -31,3 +31,6 @@ def estudiantes(req):
 
 def entregables(req): 
     return render(req, "entregables.html")
+
+def login(req): 
+    return render(req, "login.html")
