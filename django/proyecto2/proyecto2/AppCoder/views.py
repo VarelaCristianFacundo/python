@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Curso
+from .forms import CursoFormulario
 
 # Create your views here.
 def curso(req, nombre, camada):
@@ -35,11 +36,30 @@ def entregables(req):
 def login(req): 
     return render(req, "login.html")
 
-def cursoFormulario(req):    
-    print('method', req.method)
-    print('POST', req.POST)
+def cursoFormulario(req):      
     if req.method == 'POST':
-        pass
+        cursoFormulario = CursoFormulario(req.POST)
+        
+        if cursoFormulario.is_valid():        
+            data = cursoFormulario.cleaned_data
+            curso = Curso(nombre=data["curso"], camada=data["camada"])
+            curso.save()
+            
+            return render(req, "cursoFormulario.html")
     else:
-        return render(req, "cursoFormulario.html")
-    return render(req, "cursoFormulario.html")
+        cursoFormulario = CursoFormulario()                
+
+    print(cursoFormulario)    
+    return render(req, "cursoFormulario.html", {"cursoFormulario": cursoFormulario})
+
+def busquedaCamada(req):
+    return render(req, "busquedaCamada.html")
+
+def buscar(req):
+    
+    if req.GET["camada"]:
+        camada = req.GET["camada"]    
+        curso = Curso.objects.get(camada=camada)
+        return render(req, "resultadoBusqueda.html", {"curso": curso})
+    else:        
+        return HttpResponse(f'Debe agregar una camada')

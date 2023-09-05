@@ -3,9 +3,10 @@
 
 <form action="{% url 'CursoFormulario' %}" method="post">
   {% csrf_token %}
-  <p>Curso: <input type="text" name="curso" /></p>
-  <p>Camada: <input type="number" name="camada" /></p>
+  <!-- <p>Curso: <input type="text" name="curso" /></p>
+  <p>Camada: <input type="number" name="camada" /></p> -->
   <br />
+  {{cursoFormulario.as_p}}
   <button type="submit">Enviar</button>
 </form>
 
