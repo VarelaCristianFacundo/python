@@ -34,3 +34,12 @@ def entregables(req):
 
 def login(req): 
     return render(req, "login.html")
+
+def cursoFormulario(req):    
+    print('method', req.method)
+    print('POST', req.POST)
+    if req.method == 'POST':
+        pass
+    else:
+        return render(req, "cursoFormulario.html")
+    return render(req, "cursoFormulario.html")
